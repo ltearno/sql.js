@@ -1,6 +1,6 @@
 # Edit for your paths
-EMSCRIPTEN=~/Dev/emscripten
-EMCC=$(EMSCRIPTEN)/emcc -O2
+EMSCRIPTEN=~/emscripten/emscripten
+EMCC=$(EMSCRIPTEN)/emcc #-O1
 # -s INLINING_LIMIT=0
 CFLAGS=-DSQLITE_DISABLE_LFS -DLONGDOUBLE_TYPE=double -DSQLITE_INT64_TYPE="long long int" -DSQLITE_THREADSAFE=0
 
