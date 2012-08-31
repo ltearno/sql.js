@@ -51,7 +51,13 @@ Module['open'] = function(data) {
     'exportData': function() {
       if (!this.ptr) throw 'Database closed!';
       return new Uint8Array(FS.root.contents[this.filename].contents);
-    }
+    },
+	
+	'lastInsertRowId': function() {
+	  if (!this.ptr) throw 'Database closed!';
+	  var ret = Module['ccall']('sqlite3_last_insert_rowid', 'number', ['number'], [this.ptr]);
+	  return ret;
+	}
   };
 };
 
